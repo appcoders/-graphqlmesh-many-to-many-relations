@@ -8,3 +8,18 @@ then
 ` yarn install ` 
 ` yarn graphql-mesh dev`
 
+
+### Target Query design
+
+```graphql
+query MyQuery {
+  articles {
+    content
+    id
+    title
+    categories {
+      title
+    }
+  }
+}
+```

@@ -11,3 +11,23 @@ sources:
           - articles
           - article_to_categories
           - article_categories
+
+
+additionalTypeDefs: |
+  extend type articles {
+    categories: [article_categories]
+  }
+additionalResolvers:
+  - targetTypeName: articles
+    targetFieldName: categories
+    sourceName: relationtest # Which source does the target field belong to?
+    sourceTypeName: Query # Which root type does the target field belong to?
+    sourceFieldName: article_categories # What is the source field name?
+    # we need the following selection set to pass it to the underlying query (Query.article_categories(where: { id:...}))
+    requiredSelectionSet:
+      |
+      {
+        id
+      }
+    sourceArgs: # What args does this need to take?
+      where.id: "{root.id}" # `root` refers to the current selectionSet
