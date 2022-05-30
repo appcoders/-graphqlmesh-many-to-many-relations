@@ -1,0 +1,11 @@
+{
+  "name": "relationtest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@graphql-mesh/cli": "^0.70.3",
+    "@graphql-mesh/mysql": "^0.15.20",
+    "graphql": "^16.5.0"
+  }
+}

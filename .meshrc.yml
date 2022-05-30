@@ -1,0 +1,13 @@
+sources:
+  - name: relationtest
+    handler:
+      mysql:
+        host: 127.0.0.1
+        port: 3306
+        user: root
+        password: password
+        database: relationtest
+        tables: 
+          - articles
+          - article_to_categories
+          - article_categories
